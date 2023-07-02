@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Ammo"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0FADB274</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"Money"</Description>
+      <Options moHideChildren="1"/>
+      <Color>00FF00</Color>
+      <GroupHeader>1</GroupHeader>
+      <Address>0</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"money"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>0FD775E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"money"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>0FD77DC8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"money"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>client.dll+1254E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"money"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>client.dll+12F500</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

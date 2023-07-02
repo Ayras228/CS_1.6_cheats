@@ -1,0 +1,10 @@
+﻿  CSFly.cpp
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(81,62): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(81,62): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(83,52): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(83,52): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(88,72): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(88,72): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(113,63): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
+G:\C++\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(114,63): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
+  CounterStrikecheats.vcxproj -> G:\C++\CounterStrikecheats\x64\Debug\CounterStrikecheats.exe
