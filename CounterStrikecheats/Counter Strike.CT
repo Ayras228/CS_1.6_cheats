@@ -2,46 +2,2065 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
-      <ID>1</ID>
-      <Description>"Ammo"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>0FADB274</Address>
+      <ID>15</ID>
+      <Description>"Real Z coordinate"</Description>
+      <VariableType>Float</VariableType>
+      <Address>00189564</Address>
     </CheatEntry>
     <CheatEntry>
-      <ID>14</ID>
-      <Description>"Money"</Description>
-      <Options moHideChildren="1"/>
-      <Color>00FF00</Color>
+      <ID>16</ID>
+      <Description>"Real X coordinate"</Description>
+      <VariableType>Float</VariableType>
+      <Address>0018955C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"Real Y coordinate"</Description>
+      <VariableType>Float</VariableType>
+      <Address>00189560</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"Coordinate X"</Description>
+      <GroupHeader>1</GroupHeader>
+      <Address/>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>0018955C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>hw.dll+6C2040</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"No description"</Description>
+      <VariableType>Float</VariableType>
+      <Address>hw.dll+9CF4B8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>129</ID>
+      <Description>"Coordinate Z"</Description>
       <GroupHeader>1</GroupHeader>
       <Address>0</Address>
       <CheatEntries>
         <CheatEntry>
-          <ID>10</ID>
-          <Description>"money"</Description>
-          <Color>00FF00</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>0FD775E4</Address>
+          <ID>56</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>00189560</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>11</ID>
-          <Description>"money"</Description>
-          <Color>00FF00</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>0FD77DC8</Address>
+          <ID>57</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+6C2044</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>12</ID>
-          <Description>"money"</Description>
-          <Color>00FF00</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>client.dll+1254E4</Address>
+          <ID>58</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+9CF4BC</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>680</ID>
+      <Description>"Coordinate Y"</Description>
+      <GroupHeader>1</GroupHeader>
+      <Address>0</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>142</ID>
+          <Description>"No description"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+16C4E0</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>13</ID>
-          <Description>"money"</Description>
-          <Color>00FF00</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>client.dll+12F500</Address>
+          <ID>143</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+16D2B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>147</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+100A040</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>149</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AEF0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>150</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>151</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>152</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF2C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>153</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>154</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>155</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF50</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>156</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF5C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>157</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF68</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>158</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF74</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>159</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>160</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF8C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>161</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AF98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>162</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFA4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>163</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFB0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>164</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFBC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>165</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFC8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>166</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFD4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>167</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>168</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFEC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>169</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108AFF8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>170</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B004</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>171</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B010</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>172</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B01C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>173</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B028</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>174</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B034</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>175</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B040</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>176</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B04C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>177</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B058</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>178</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B064</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B070</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>180</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B07C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>181</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B088</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>182</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B094</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>183</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0AC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>185</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>186</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>187</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>188</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>189</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>190</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B0F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>191</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B100</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>192</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B10C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>193</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B118</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>194</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B124</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>195</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B130</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>196</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B13C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>197</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B148</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>198</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B154</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>199</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B160</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>200</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B16C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>201</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B178</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>202</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B184</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>203</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B190</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>204</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B19C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>205</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>206</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>207</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>208</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1CC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>209</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>210</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>211</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>212</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B1FC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>213</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B208</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>214</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108B2B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>215</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108DD30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>216</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+108F570</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>217</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1091FE8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>218</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1093828</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>219</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10962A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>220</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1097AE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>221</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+109A558</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>222</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+109BD98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>223</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+109E810</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>224</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10A0050</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>225</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10A2AC8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>226</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10A4308</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>227</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10A6D80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>228</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10A85C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>229</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10AB038</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>230</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10AC878</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>231</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10AF2F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>232</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10B0B30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>233</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10B35A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>234</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10B4DE8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>235</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10B7860</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>236</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10B90A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>237</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10BBB18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>238</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10BD358</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>239</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10BFDD0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>240</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10C1610</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>241</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10C4088</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>242</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10C58C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>243</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10C8340</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>244</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10C9B80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>245</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10CC5F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>246</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10CDE38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>247</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10D08B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>248</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10D20F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10D4B68</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>250</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10D63A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>251</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10D8E20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>252</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10DA660</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>253</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10DD0D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>254</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10DE918</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>255</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10E1390</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>256</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10E2BD0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>257</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10E5648</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>258</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10E6E88</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>259</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10E9900</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>260</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10EB140</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>261</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10EDBB8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>262</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10EF3F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>263</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10F1E70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>264</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10F36B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>265</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10F6128</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>266</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10F7968</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>267</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10FA3E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>268</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10FBC20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>269</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10FE698</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>270</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+10FFED8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>271</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1102950</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>272</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1104190</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>273</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1106C08</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>274</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1108448</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>275</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+110AEC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>276</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+110C700</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>277</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+110F178</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>278</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11109B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>279</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1113430</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>280</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1114C70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11176E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>282</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1118F28</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>283</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+111B9A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>284</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+111D1E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>285</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+111FC58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>286</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1121498</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>287</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1123F10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>288</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1125750</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>289</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11281C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>290</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1129A08</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>291</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+112C480</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>292</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+112DCC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>293</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1130738</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>294</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1131F78</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>295</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11349F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>296</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1136230</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>297</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1138CA8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>298</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+113A4E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>299</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+113CF60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>300</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+113E7A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>301</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1141218</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>302</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1142A58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>303</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11454D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>304</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1146D10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>305</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1149788</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>306</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+114AFC8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>307</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+114DA40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>308</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+114F280</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>309</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1151CF8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>310</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1153538</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>311</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1155FB0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>312</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11577F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>313</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+115A268</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>314</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+115BAA8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>315</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+115E520</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>316</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+115FD60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>317</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11627D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>318</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1164018</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>319</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1166A90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>320</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11682D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>321</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+116AD48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>322</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+116C588</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>323</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+116F000</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>324</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1170840</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>325</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11732B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>326</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1174AF8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>327</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1177570</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>328</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1178DB0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>329</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+117B828</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>330</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+117D068</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>331</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+117FAE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>332</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1181320</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>333</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1183D98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>334</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11855D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>335</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1188050</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>336</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1189890</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>337</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+118C308</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>338</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+118DB48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>339</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11905C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>340</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1191E00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>341</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1194878</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>342</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11973A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>343</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11974E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>344</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1198CD0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>345</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+1198E14</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>346</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119A600</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>347</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119A744</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>348</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119BF30</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>349</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119C074</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>350</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119D860</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>351</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119D9A4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>352</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119F190</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>353</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+119F2D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>354</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A0AC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>355</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A0C04</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>356</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A23F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>357</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A2534</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>358</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A3D20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>359</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A3E64</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>360</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A5650</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>361</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A5794</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>362</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A6F80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>363</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A70C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>364</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A88B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>365</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11A89F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>366</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AA1E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>367</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AA324</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>368</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11ABB10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>369</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11ABC54</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>370</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AD440</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>371</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AD584</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>372</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AED70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>373</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11AEEB4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>374</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B06A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>375</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B07E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>376</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B1FD0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>377</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B2114</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>378</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B3900</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>379</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B3A44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>380</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B5230</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>381</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B5374</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>382</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B6B60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>383</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B6CA4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>384</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B8490</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>385</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B85D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>386</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B9DC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>387</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11B9F04</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>388</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BB6F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>389</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BB834</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>390</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BD020</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>391</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BD164</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>392</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BE950</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>393</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11BEA94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>394</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C0280</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>395</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C03C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>396</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C1BB0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>397</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C1CF4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>398</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C34E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>399</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C3624</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>400</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C4E10</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>401</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C4F54</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>402</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C6740</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>403</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C6884</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>404</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C8070</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>405</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C81B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>406</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C99A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>407</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11C9AE4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>408</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CB2D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>409</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CB414</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>410</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CCC00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>411</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CCD44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>412</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CE530</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>413</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CE674</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>414</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CFE60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>415</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11CFFA4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>416</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D1790</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>417</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D18D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>418</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D30C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>419</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D3204</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>420</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D49F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>421</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D4B34</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>422</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D6320</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>423</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D6464</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>424</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D7C50</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>425</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D7D94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>426</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D9580</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>427</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11D96C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>428</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DAEB0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>429</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DAFF4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>430</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DC7E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>431</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DC924</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>432</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DE110</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>433</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DE254</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>434</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DFA40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>435</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11DFB84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>436</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E1370</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>437</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E14B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>438</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E2CA0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>439</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E2DE4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>440</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E45D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>441</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E4714</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>442</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E5F00</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>443</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E6044</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>444</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E7830</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>445</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E7974</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>446</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E9160</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>447</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11E92A4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>448</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EAA90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>449</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EABD4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>450</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EC3C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>451</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EC504</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>452</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EDCF0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>453</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EDE34</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>454</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EF620</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>455</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11EF764</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>456</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F0F50</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>457</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F1094</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>458</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F2880</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>459</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F29C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>460</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F41B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>461</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F42F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>462</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F5AE0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>463</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F5C24</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>464</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F7410</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>465</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F7554</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>466</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F8D40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>467</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11F8E84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>468</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11FA670</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>469</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+11FA7B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>470</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+120436C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>471</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>hw.dll+122E2F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>675</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>client.dll+F7A40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>676</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>client.dll+F90E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>677</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>client.dll+121570</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>678</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>client.dll+13E814</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>679</ID>
+          <Description>"No description"</Description>
+          <VariableType>Float</VariableType>
+          <Address>client.dll+13F1E0</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
