@@ -18,5 +18,11 @@
     <ClCompile Include="CSFly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GetModuleNewVersion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cheatsmember.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

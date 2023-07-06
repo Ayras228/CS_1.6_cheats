@@ -11,10 +11,10 @@
 
 
 
-std::uint32_t y_read_offset = 0x00189564;  //0x108AAB0 in video	//0x12F500	//0x1254E4		//my read Z coordinate 00189564
+std::uint32_t y_read_offset = 0x16C4E0;  //0x108AAB0 in video	//0x12F500	//0x1254E4		//my read Z coordinate 00189564		//0x16C4E0
 
 std::uint32_t y_addres = 0x131D0CFC;
-std::uint32_t y_pos_addr = 0x086FAAB0;
+std::uint32_t y_pos_addr = 0x086FAAB0;		
 
 
 
@@ -33,16 +33,17 @@ std::uint32_t money4 = 0xF0E9A48;
 
 
 
-char cs_module_name[] = "hl.exe";		//+0x016C4E0
-char hw_module_name[] = "hw.dll";
+const wchar_t* cs_module_name = L"hl.exe";		//+0x016C4E0
+const wchar_t* hw_module_name = L"hw.dll";		//hw.dll+16C4E0
+//char hw_module_name[] = "hl.exe";
 
-std::wstring s2ws(const std::string& str)
-{
-	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
-	std::wstring wstrTo(size_needed, 0);
-	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
-	return wstrTo;
-}
+//std::wstring s2ws(const std::string& str)
+//{
+//	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
+//	std::wstring wstrTo(size_needed, 0);
+//	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
+//	return wstrTo;
+//}
 
 
 std::uint32_t find_cs_pid()
@@ -56,64 +57,39 @@ std::uint32_t find_cs_pid()
 	Process32First(process_snap, &pe);
 	do
 	{
-		bool equal = std::string(pe.szExeFile) == cs_module_name;
+		bool equal = !wcscmp(pe.szExeFile, cs_module_name);
 		if (equal)
 		{
 			return pe.th32ProcessID;
 		}
 	} while (Process32Next(process_snap,&pe));
-
+	std::cerr << "ERROR find_cs_pid() \n";
 	return 0;
 }
 
 
-//std::pair<std::uint32_t, std::wstring> find_module_base_pair(std::uint32_t p_id)
-//{
-//	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, p_id);
-//	if (modules_snap == NULL)
-//	{
-//		throw std::exception("Can`t snap modules");
-//	}
-//	MODULEENTRY32 me{ sizeof(me) };
-//	Module32First(modules_snap, &me);
-//	do
-//	{
-//		bool match = reinterpret_cast<std::uint32_t>(me.modBaseAddr) 
-//			<= y_pos_addr && y_pos_addr 
-//			< reinterpret_cast<std::uint32_t>(me.modBaseAddr) 
-//			+ me.modBaseSize;
-//		if (match)
-//		{
-//			CloseHandle(modules_snap);
-//			return std::make_pair(reinterpret_cast<std::uint32_t>(me.modBaseAddr), me.szModule);
-//		}
-//	} while (Module32Next(modules_snap, &me));
-//	CloseHandle(modules_snap);
-//	return {};
-//}
-
-
-
-std::uint32_t find_module_base(std::uint32_t p_id,std::string module_name)
+std::uint32_t find_module_base(std::uint32_t p_id, const wchar_t* module_name)
 {
-	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, p_id);
+	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, p_id);
 	if (modules_snap == NULL)
 	{
 		throw std::exception("Can`t snap modules");
 	}
 	MODULEENTRY32 me{ sizeof(me) };
 	Module32First(modules_snap, &me);
+
 	do
 	{
-		if (module_name==me.szModule)
+		//std::wcout << "me.szModule: " << me.szModule<<std::endl;
+		if (!wcscmp(me.szModule, module_name))
 		{
 			CloseHandle(modules_snap);
 			return reinterpret_cast<std::uint32_t>(me.modBaseAddr);
 		}
 	} while (Module32Next(modules_snap, &me));
 	CloseHandle(modules_snap);
-	std::cout << "ERROR" << std::endl;
-	return {};
+	std::cerr << "ERROR find_module_base() \n";
+	return 0;
 }
 
 template<typename GameType>
@@ -142,15 +118,21 @@ void scan_memory(HANDLE process_handle_,GameType value, std::vector<std::uint32_
 				{
 					if (*current_page_ptr == value)
 					{
-						addresses_out.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr - read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
+						addresses_out.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
+							read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
+
 					}
 					current_page_ptr = (GameType*)(((char*)current_page_ptr) + 1);
 				}
 
 			}
 		}
+		current_ptr += m_i.RegionSize;
 	}
 }
+
+
+
 int main()
 {
 	std::uint32_t pid = find_cs_pid();
@@ -159,7 +141,7 @@ int main()
 	{
 		return 1;
 	}
-	
+	std::cout << "pid: " << pid << std::endl;
 	std::uint32_t module_base_addr=find_module_base(pid, hw_module_name);
 	std::uint32_t y_read_address = module_base_addr + y_read_offset;
 	float y_value;
@@ -168,6 +150,7 @@ int main()
 
 	std::vector<std::uint32_t> addresses;
 	scan_memory(csProcess,y_value, addresses);
+	std::cout << addresses.size();
 	CloseHandle(csProcess);
 
 	//float yPos = 200;

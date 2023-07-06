@@ -1,12 +1,12 @@
 ﻿  CSFly.cpp
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(111,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(111,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(167,69): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(121): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(170,42): message : see reference to function template instantiation 'void scan_memory<float>(HANDLE,GameType,std::vector<uint32_t,std::allocator<uint32_t>> &)' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(87,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(87,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(149,69): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(97): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(152,42): message : see reference to function template instantiation 'void scan_memory<float>(HANDLE,GameType,std::vector<uint32_t,std::allocator<uint32_t>> &)' being compiled
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(121): warning C4302: 'type cast': truncation from 'uint8_t *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(97): warning C4302: 'type cast': truncation from 'uint8_t *' to 'uint32_t'
   CounterStrikecheats.vcxproj -> G:\C++\CS_1.6_cheats\CounterStrikecheats\x64\Debug\CounterStrikecheats.exe
