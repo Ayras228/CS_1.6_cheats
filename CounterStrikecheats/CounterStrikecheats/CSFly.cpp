@@ -13,12 +13,12 @@ class Cheat
 public:
 	Cheat();
 	~Cheat();
-	std::uint32_t get_pid();
+	/*std::uint32_t get_pid();
 	std::uint32_t get_module_base_address();
 	std::uint32_t get_y_read_address();
-	std::vector<std::uint32_t> get_addresses_value_type();
+	std::vector<std::uint32_t> get_addresses_value_type();*/
 	HANDLE get_csProcess();
-	
+	void find_address(GameType & y_value);
 	void scan_memory(GameType value);
 
 private:
@@ -34,6 +34,10 @@ private:
 
 
 	const std::uint32_t y_read_offset = 0x16C4E0;
+
+
+
+
 	const wchar_t* cs_module_name = L"hl.exe";		//+0x016C4E0
 	const wchar_t* hw_module_name = L"hw.dll";
 	
@@ -58,30 +62,38 @@ template<typename GameType>
 Cheat<GameType>::~Cheat()
 {
 }
-template<typename GameType>
-std::uint32_t Cheat<GameType>::get_pid()
-{
-	return pid;
-}
-template<typename GameType>
-std::uint32_t Cheat<GameType>::get_module_base_address()
-{
-	return module_base_address;
-}
-template<typename GameType>
-std::uint32_t Cheat<GameType>::get_y_read_address()
-{
-	return y_read_address;
-}
-template<typename GameType>
-std::vector<std::uint32_t> Cheat<GameType>::get_addresses_value_type()
-{
-	return addresses_value_type;
-}
+//template<typename GameType>
+//std::uint32_t Cheat<GameType>::get_pid()
+//{
+//	return pid;
+//}
+//template<typename GameType>
+//std::uint32_t Cheat<GameType>::get_module_base_address()
+//{
+//	return module_base_address;
+//}
+//template<typename GameType>
+//std::uint32_t Cheat<GameType>::get_y_read_address()
+//{
+//	return y_read_address;
+//}
+//template<typename GameType>
+//std::vector<std::uint32_t> Cheat<GameType>::get_addresses_value_type()
+//{
+//	return addresses_value_type;
+//}
 template<typename GameType>
 HANDLE Cheat<GameType>::get_csProcess()
 {
 	return csProcess;
+}
+
+template<typename GameType>
+void Cheat<GameType>::find_address(GameType & y_value)
+{
+	SIZE_T size;
+	ReadProcessMemory(csProcess, reinterpret_cast<void*>(y_read_address), &y_value, sizeof(y_value), &size);
+
 }
 
 
@@ -181,6 +193,7 @@ void Cheat<GameType>::scan_memory(GameType value)
 		current_ptr += m_i.RegionSize;
 		
 	}
+	std::cout << "get_addresses_value_type().size(): " << addresses_value_type.size() << std::endl;
 }
 
 
@@ -191,10 +204,9 @@ int main()
 {
 	Cheat<float> *cheat = new Cheat<float>;
 	float y_value;
-	SIZE_T size;
-	ReadProcessMemory(cheat->get_csProcess(), reinterpret_cast<void*>(cheat->get_y_read_address()), &y_value, sizeof(y_value), &size);
+	cheat->find_address(y_value);
 	cheat->scan_memory(y_value);
-	std::cout << "get_addresses_value_type().size(): "<<cheat->get_addresses_value_type().size() << std::endl;
+	
 	CloseHandle(cheat->get_csProcess());
 	
 	return 0;
