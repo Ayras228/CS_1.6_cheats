@@ -7,46 +7,90 @@
 #include<vector>
 #include<chrono>
 
+template<typename GameType>
+class Cheat
+{
+public:
+	Cheat();
+	~Cheat();
+	std::uint32_t get_pid();
+	std::uint32_t get_module_base_address();
+	std::uint32_t get_y_read_address();
+	std::vector<std::uint32_t> get_addresses_value_type();
+	HANDLE get_csProcess();
+	
+	void scan_memory(GameType value);
+
+private:
+	std::uint32_t find_cs_pid();
+	std::uint32_t find_module_base();
+
+	void search_address(std::uint8_t* current_ptr,GameType value,  MEMORY_BASIC_INFORMATION& m_i);
+	
+	std::uint32_t pid;
+	HANDLE csProcess;
+	std::uint32_t module_base_address;
+	std::uint32_t y_read_address;
+
+
+	const std::uint32_t y_read_offset = 0x16C4E0;
+	const wchar_t* cs_module_name = L"hl.exe";		//+0x016C4E0
+	const wchar_t* hw_module_name = L"hw.dll";
+	
+	std::vector<std::uint32_t> addresses_value_type;
+};
+
+template<typename GameType>
+Cheat<GameType>::Cheat()
+{
+	pid = find_cs_pid();
+	std::cout << "pid: " << pid << std::endl;
+	csProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+	if (csProcess == NULL)
+	{
+		throw std::exception("OpenProcess failed: ",pid);
+	}
+	module_base_address = find_module_base();
+	y_read_address = module_base_address + y_read_offset;
+}
+
+template<typename GameType>
+Cheat<GameType>::~Cheat()
+{
+}
+template<typename GameType>
+std::uint32_t Cheat<GameType>::get_pid()
+{
+	return pid;
+}
+template<typename GameType>
+std::uint32_t Cheat<GameType>::get_module_base_address()
+{
+	return module_base_address;
+}
+template<typename GameType>
+std::uint32_t Cheat<GameType>::get_y_read_address()
+{
+	return y_read_address;
+}
+template<typename GameType>
+std::vector<std::uint32_t> Cheat<GameType>::get_addresses_value_type()
+{
+	return addresses_value_type;
+}
+template<typename GameType>
+HANDLE Cheat<GameType>::get_csProcess()
+{
+	return csProcess;
+}
 
 
 
 
-std::uint32_t y_read_offset = 0x16C4E0;  //0x108AAB0 in video	//0x12F500	//0x1254E4		//my read Z coordinate 00189564		//0x16C4E0
-
-std::uint32_t y_addres = 0x131D0CFC;
-std::uint32_t y_pos_addr = 0x086FAAB0;		
 
 
-
-
-
-
-std::uint32_t money1 = 0x1AF65E4;
-std::uint32_t money2 = 0x1AF6F500;
-std::uint32_t money3 = 0x0F0E9264;		
-std::uint32_t money4 = 0xF0E9A48;		
-
-
-
-//std::uint32_t y_pos_addr = 0xclient.dll + 1254E4		1AF65E4
-//std::uint32_t y_pos_addr = 0xclient.dll + 12F500		1AF6F500
-
-
-
-const wchar_t* cs_module_name = L"hl.exe";		//+0x016C4E0
-const wchar_t* hw_module_name = L"hw.dll";		//hw.dll+16C4E0
-//char hw_module_name[] = "hl.exe";
-
-//std::wstring s2ws(const std::string& str)
-//{
-//	int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
-//	std::wstring wstrTo(size_needed, 0);
-//	MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), &wstrTo[0], size_needed);
-//	return wstrTo;
-//}
-
-
-std::uint32_t find_cs_pid()
+template<typename GameType>
+std::uint32_t Cheat<GameType>::find_cs_pid()
 {
 	HANDLE process_snap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
 	if (process_snap == NULL)
@@ -57,20 +101,18 @@ std::uint32_t find_cs_pid()
 	Process32First(process_snap, &pe);
 	do
 	{
-		bool equal = !wcscmp(pe.szExeFile, cs_module_name);
-		if (equal)
+		if (!wcscmp(pe.szExeFile, cs_module_name))
 		{
 			return pe.th32ProcessID;
 		}
-	} while (Process32Next(process_snap,&pe));
-	std::cerr << "ERROR find_cs_pid() \n";
-	return 0;
+	} while (Process32Next(process_snap, &pe));
+
+	throw std::exception("not found cs_module_name ");
 }
-
-
-std::uint32_t find_module_base(std::uint32_t p_id, const wchar_t* module_name)
+template<typename GameType>
+std::uint32_t Cheat<GameType>::find_module_base()
 {
-	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, p_id);
+	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, pid);
 	if (modules_snap == NULL)
 	{
 		throw std::exception("Can`t snap modules");
@@ -81,88 +123,79 @@ std::uint32_t find_module_base(std::uint32_t p_id, const wchar_t* module_name)
 	do
 	{
 		//std::wcout << "me.szModule: " << me.szModule<<std::endl;
-		if (!wcscmp(me.szModule, module_name))
+		if (!wcscmp(me.szModule, hw_module_name))
 		{
 			CloseHandle(modules_snap);
 			return reinterpret_cast<std::uint32_t>(me.modBaseAddr);
 		}
 	} while (Module32Next(modules_snap, &me));
 	CloseHandle(modules_snap);
-	std::cerr << "ERROR find_module_base() \n";
-	return 0;
+	throw std::exception("not found hw_module_name ");
+
+	
 }
 
+
 template<typename GameType>
-void scan_memory(HANDLE process_handle_,GameType value, std::vector<std::uint32_t>&addresses_out)
+void Cheat<GameType>::search_address(std::uint8_t *current_ptr, GameType value,  MEMORY_BASIC_INFORMATION &m_i)
+{
+
+	std::size_t bytes = VirtualQueryEx(csProcess, current_ptr, &m_i, sizeof(m_i));
+	if (m_i.State == MEM_COMMIT && m_i.Protect == PAGE_READWRITE)
+	{
+		std::vector<std::uint8_t> read_buffer(m_i.RegionSize);
+		SIZE_T read_byte;
+		if (ReadProcessMemory(csProcess, current_ptr, read_buffer.data(), m_i.RegionSize, &read_byte) == TRUE)
+		{
+			GameType* current_page_ptr = reinterpret_cast<GameType*>(read_buffer.data());
+			while ((std::uint8_t*)current_page_ptr < read_buffer.data() + read_buffer.size())
+			{
+				if (*current_page_ptr == value)
+				{
+					addresses_value_type.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
+						read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
+
+				}
+				current_page_ptr = (GameType*)(((char*)current_page_ptr) + 1);
+			}
+
+		}
+	}
+	
+}
+template<typename GameType>
+void Cheat<GameType>::scan_memory(GameType value)
 {
 	SYSTEM_INFO s_i;
 	GetSystemInfo(&s_i);
 	std::uint8_t* start_ptr = static_cast<std::uint8_t*>(s_i.lpMinimumApplicationAddress);
 	std::uint8_t* end_ptr = static_cast<std::uint8_t*>(s_i.lpMaximumApplicationAddress);
 
-	addresses_out.clear();
+	addresses_value_type.clear();
 	std::uint8_t* current_ptr = start_ptr;
 
 	while (current_ptr < end_ptr)
 	{
 		MEMORY_BASIC_INFORMATION m_i;
-		std::size_t bytes = VirtualQueryEx(process_handle_, current_ptr, &m_i, sizeof(m_i));
-		if (m_i.State == MEM_COMMIT && m_i.Protect == PAGE_READWRITE)
-		{
-			std::vector<std::uint8_t> read_buffer(m_i.RegionSize);
-			SIZE_T read_byte;
-			if (ReadProcessMemory(process_handle_, current_ptr, read_buffer.data(), m_i.RegionSize, &read_byte) == TRUE)
-			{
-				GameType* current_page_ptr = reinterpret_cast<GameType*>(read_buffer.data());
-				while ((std::uint8_t*)current_page_ptr < read_buffer.data() + read_buffer.size())
-				{
-					if (*current_page_ptr == value)
-					{
-						addresses_out.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
-							read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
-
-					}
-					current_page_ptr = (GameType*)(((char*)current_page_ptr) + 1);
-				}
-
-			}
-		}
+		search_address(current_ptr, value, m_i);
 		current_ptr += m_i.RegionSize;
+		
 	}
 }
 
 
 
+
+
 int main()
 {
-	std::uint32_t pid = find_cs_pid();
-	HANDLE csProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
-	if (csProcess == NULL)
-	{
-		return 1;
-	}
-	std::cout << "pid: " << pid << std::endl;
-	std::uint32_t module_base_addr=find_module_base(pid, hw_module_name);
-	std::uint32_t y_read_address = module_base_addr + y_read_offset;
+	Cheat<float> *cheat = new Cheat<float>;
 	float y_value;
 	SIZE_T size;
-	ReadProcessMemory(csProcess, reinterpret_cast<void*>(y_read_address), &y_value,sizeof(y_value),&size);
-
-	std::vector<std::uint32_t> addresses;
-	scan_memory(csProcess,y_value, addresses);
-	std::cout << addresses.size();
-	CloseHandle(csProcess);
-
-	//float yPos = 200;
-	//float MONEY = 16000;
-	//SIZE_T size;
-	//while (true)
-	//{
-	//	//WriteProcessMemory(csprocess, reinterpret_cast<void*>(money1), &MONEY, sizeof(MONEY), &size);
-	//	//WriteProcessMemory(csprocess, reinterpret_cast<void*>(money2), &MONEY, sizeof(MONEY), &size);
-	//	WriteProcessMemory(csProcess, reinterpret_cast<void*>(money3), &MONEY, sizeof(MONEY), &size);
-	//	WriteProcessMemory(csProcess, reinterpret_cast<void*>(money4), &MONEY, sizeof(MONEY), &size);
-	//	//std::cout << check1 << " " << GetLastError << "\n" << check2<<std::endl;
-	//}
+	ReadProcessMemory(cheat->get_csProcess(), reinterpret_cast<void*>(cheat->get_y_read_address()), &y_value, sizeof(y_value), &size);
+	cheat->scan_memory(y_value);
+	std::cout << "get_addresses_value_type().size(): "<<cheat->get_addresses_value_type().size() << std::endl;
+	CloseHandle(cheat->get_csProcess());
+	
 	return 0;
 }
