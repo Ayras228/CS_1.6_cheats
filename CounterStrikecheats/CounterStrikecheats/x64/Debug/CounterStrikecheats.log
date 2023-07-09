@@ -1,32 +1,5 @@
 ﻿  CSFly.cpp
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(91,1): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(89,1): message : while compiling class template member function 'void Cheat<float>::find_address(GameType &)'
-          with
-          [
-              GameType=float
-          ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(203,21): message : see reference to function template instantiation 'void Cheat<float>::find_address(GameType &)' being compiled
-          with
-          [
-              GameType=float
-          ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(201,40): message : see reference to class template instantiation 'Cheat<float>' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(137,1): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(122,1): message : while compiling class template member function 'uint32_t Cheat<float>::find_module_base(void)'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(53,22): message : see reference to function template instantiation 'uint32_t Cheat<float>::find_module_base(void)' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(45,1): message : while compiling class template member function 'Cheat<float>::Cheat(void)'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(201,22): message : see reference to function template instantiation 'Cheat<float>::Cheat(void)' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(137,1): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(164,1): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(149,1): message : while compiling class template member function 'void Cheat<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)'
-          with
-          [
-              GameType=float
-          ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(188,17): message : see reference to function template instantiation 'void Cheat<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)' being compiled
-          with
-          [
-              GameType=float
-          ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(164,1): warning C4302: 'type cast': truncation from 'uint8_t *' to 'uint32_t'
-  CounterStrikecheats.vcxproj -> G:\C++\CS_1.6_cheats\CounterStrikecheats\x64\Debug\CounterStrikecheats.exe
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(183,55): error C3861: 'read_address': identifier not found
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(183,55): error C2065: 'read_address': undeclared identifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\system_error(44): message : see reference to class template instantiation 'std::is_error_code_enum<unsigned __int64>' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\system_error(38): message : see reference to variable template 'const bool is_error_code_enum_v<unsigned __int64>' being compiled

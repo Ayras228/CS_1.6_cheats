@@ -72,6 +72,7 @@
     <CheatEntry>
       <ID>680</ID>
       <Description>"Coordinate Y"</Description>
+      <Options moHideChildren="1"/>
       <GroupHeader>1</GroupHeader>
       <Address>0</Address>
       <CheatEntries>
@@ -2061,6 +2062,26 @@
           <Description>"No description"</Description>
           <VariableType>Float</VariableType>
           <Address>client.dll+13F1E0</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>685</ID>
+      <Description>"Money"</Description>
+      <GroupHeader>1</GroupHeader>
+      <Address>0</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>683</ID>
+          <Description>"Real money"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>client.dll+1254E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>684</ID>
+          <Description>"Real money"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>client.dll+12F500</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>

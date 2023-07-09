@@ -18,28 +18,27 @@ public:
 	std::uint32_t get_y_read_address();
 	std::vector<std::uint32_t> get_addresses_value_type();*/
 	HANDLE get_csProcess();
-	void find_address(GameType & y_value);
-	void scan_memory(GameType value);
+	//void find_address(GameType & y_value);
+	void scan_memory(std::uint32_t read_address, GameType value);
 
 private:
 	std::uint32_t find_cs_pid();
-	std::uint32_t find_module_base();
+	std::uint32_t find_module_base(const wchar_t*  module_name);
 
 	void search_address(std::uint8_t* current_ptr,GameType value,  MEMORY_BASIC_INFORMATION& m_i);
-	
+	void _init();
 	std::uint32_t pid;
 	HANDLE csProcess;
-	std::uint32_t module_base_address;
+	//std::uint32_t module_base_address;
 	std::uint32_t y_read_address;
-
+	std::uint32_t money_read_address;
 
 	const std::uint32_t y_read_offset = 0x16C4E0;
+	const std::uint32_t money_read_offset = 0x12F500;
 
-
-
-
-	const wchar_t* cs_module_name = L"hl.exe";		//+0x016C4E0
+	const wchar_t* cs_module_name = L"hl.exe";		//+ 0x016C4E0
 	const wchar_t* hw_module_name = L"hw.dll";
+	const wchar_t* cl_module_name = L"client.dll"; // + 0x12F500 money
 	
 	std::vector<std::uint32_t> addresses_value_type;
 };
@@ -54,8 +53,8 @@ Cheat<GameType>::Cheat()
 	{
 		throw std::exception("OpenProcess failed: ",pid);
 	}
-	module_base_address = find_module_base();
-	y_read_address = module_base_address + y_read_offset;
+	
+	_init();
 }
 
 template<typename GameType>
@@ -88,17 +87,13 @@ HANDLE Cheat<GameType>::get_csProcess()
 	return csProcess;
 }
 
-template<typename GameType>
-void Cheat<GameType>::find_address(GameType & y_value)
-{
-	SIZE_T size;
-	ReadProcessMemory(csProcess, reinterpret_cast<void*>(y_read_address), &y_value, sizeof(y_value), &size);
-
-}
-
-
-
-
+//template<typename GameType>
+//void Cheat<GameType>::find_address(GameType & y_value)
+//{
+//	SIZE_T size;
+//	ReadProcessMemory(csProcess, reinterpret_cast<void*>(y_read_address), &y_value, sizeof(y_value), &size);
+//
+//}
 
 
 template<typename GameType>
@@ -122,7 +117,7 @@ std::uint32_t Cheat<GameType>::find_cs_pid()
 	throw std::exception("not found cs_module_name ");
 }
 template<typename GameType>
-std::uint32_t Cheat<GameType>::find_module_base()
+std::uint32_t Cheat<GameType>::find_module_base(const wchar_t*  module_name)
 {
 	HANDLE modules_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, pid);
 	if (modules_snap == NULL)
@@ -135,14 +130,14 @@ std::uint32_t Cheat<GameType>::find_module_base()
 	do
 	{
 		//std::wcout << "me.szModule: " << me.szModule<<std::endl;
-		if (!wcscmp(me.szModule, hw_module_name))
+		if (!wcscmp(me.szModule, module_name))
 		{
 			CloseHandle(modules_snap);
 			return reinterpret_cast<std::uint32_t>(me.modBaseAddr);
 		}
 	} while (Module32Next(modules_snap, &me));
 	CloseHandle(modules_snap);
-	throw std::exception("not found hw_module_name ");
+	throw std::exception("not found module_name ");
 
 	
 }
@@ -176,8 +171,19 @@ void Cheat<GameType>::search_address(std::uint8_t *current_ptr, GameType value, 
 	
 }
 template<typename GameType>
-void Cheat<GameType>::scan_memory(GameType value)
+void Cheat<GameType>::_init()
 {
+	money_read_address = find_module_base(cl_module_name) + money_read_offset;
+	y_read_address = find_module_base(hw_module_name) + y_read_offset;
+}
+
+template<typename GameType>
+void Cheat<GameType>::scan_memory(std::uint32_t read_address,GameType value)
+{
+
+	SIZE_T size;
+	ReadProcessMemory(csProcess, reinterpret_cast<void*>(read_address), &value, sizeof(value), &size);
+
 	SYSTEM_INFO s_i;
 	GetSystemInfo(&s_i);
 	std::uint8_t* start_ptr = static_cast<std::uint8_t*>(s_i.lpMinimumApplicationAddress);
@@ -204,10 +210,10 @@ int main()
 {
 	Cheat<float> *cheat = new Cheat<float>;
 	float y_value;
-	cheat->find_address(y_value);
+	//cheat->find_address(y_value);
 	cheat->scan_memory(y_value);
 	
 	CloseHandle(cheat->get_csProcess());
-	
+	delete cheat;
 	return 0;
 }
