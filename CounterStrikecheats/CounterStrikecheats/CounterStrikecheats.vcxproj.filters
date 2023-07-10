@@ -18,24 +18,18 @@
     <ClCompile Include="CSFly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GetModuleNewVersion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cheatsmember.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="oldCsFly.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReadAddress.cpp">
+    <ClCompile Include="ScanAddress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cheat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ReadAddress.h">
+    <ClInclude Include="ScanAddress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cheat.h">

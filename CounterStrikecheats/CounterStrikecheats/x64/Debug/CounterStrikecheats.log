@@ -1,7 +1,4 @@
 ﻿  Cheat.cpp
-  CSFly.cpp
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(13,7): error C2660: 'Cheat<float>::scan_memory': function does not take 1 arguments
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.h(16,7): message : see declaration of 'Cheat<float>::scan_memory'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\CSFly.cpp(13,7): message : while trying to match the argument list '(float)'
-  ReadAddress.cpp
-  Generating Code...
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(114,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(114,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+  CounterStrikecheats.vcxproj -> G:\C++\CS_1.6_cheats\CounterStrikecheats\x64\Debug\CounterStrikecheats.exe

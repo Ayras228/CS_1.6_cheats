@@ -1,31 +1,35 @@
 #pragma once
 #include"Library.h"
+#include"ScanAddress.h"
 
-template<typename GameType>
 class Cheat
 {
 public:
 	Cheat();
 	~Cheat();
-	/*std::uint32_t get_pid();
-	std::uint32_t get_module_base_address();
-	std::uint32_t get_y_read_address();
-	std::vector<std::uint32_t> get_addresses_value_type();*/
-	HANDLE get_csProcess();
+	//std::uint32_t get_pid();
+	//std::uint32_t get_module_base_address();
+	//std::uint32_t get_y_read_address();
+	//std::vector<std::uint32_t> get_addresses_value_type();
 	//void find_address(GameType & y_value);
-	void scan_memory(std::uint32_t read_address, GameType value);
-
+	//void scan_memory(std::uint32_t read_address, GameType value
+	HANDLE get_csProcess();
+	ScanAddress<float>* Y_coordinate_read;
+	ScanAddress<int>* money_read;
+	void _start();
+	void start();
+	std::uint32_t Y_read_address;
+	std::uint32_t money_read_address;
 private:
 	std::uint32_t find_cs_pid();
 	std::uint32_t find_module_base(const wchar_t*  module_name);
 
-	void search_address(std::uint8_t* current_ptr,GameType value,  MEMORY_BASIC_INFORMATION& m_i);
+	//void search_address(std::uint8_t* current_ptr,GameType value,  MEMORY_BASIC_INFORMATION& m_i);
 	void _init();
 	std::uint32_t pid;
 	HANDLE csProcess;
-	//std::uint32_t module_base_address;
-	std::uint32_t y_read_address;
-	std::uint32_t money_read_address;
+
+	
 
 	const std::uint32_t y_read_offset = 0x16C4E0;
 	const std::uint32_t money_read_offset = 0x12F500;
