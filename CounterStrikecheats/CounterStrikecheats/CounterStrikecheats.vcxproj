@@ -129,10 +129,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cheat.cpp" />
     <ClCompile Include="Cheatsmember.cpp" />
     <ClCompile Include="CSFly.cpp" />
     <ClCompile Include="GetModuleNewVersion.cpp" />
     <ClCompile Include="oldCsFly.cpp" />
+    <ClCompile Include="ReadAddress.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cheat.h" />
+    <ClInclude Include="Library.h" />
+    <ClInclude Include="ReadAddress.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
