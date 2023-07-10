@@ -18,26 +18,25 @@ public:
 	ScanAddress<int>* money_read;
 	void _start();
 	void start();
-	std::uint32_t Y_read_address;
-	std::uint32_t money_read_address;
+	
 private:
 	std::uint32_t find_cs_pid();
 	std::uint32_t find_module_base(const wchar_t*  module_name);
-
-	//void search_address(std::uint8_t* current_ptr,GameType value,  MEMORY_BASIC_INFORMATION& m_i);
+	
 	void _init();
 	std::uint32_t pid;
 	HANDLE csProcess;
 
-	
-
-	const std::uint32_t y_read_offset = 0x16C4E0;
-	const std::uint32_t money_read_offset = 0x12F500;
-
 	const wchar_t* cs_module_name = L"hl.exe";		//+ 0x016C4E0
 	const wchar_t* hw_module_name = L"hw.dll";
 	const wchar_t* cl_module_name = L"client.dll"; // + 0x12F500 money
+
+
+	std::uint32_t Y_read_address;
+	std::uint32_t money_read_address;
 	
-	std::vector<std::uint32_t> addresses_value_type;
+	const std::uint32_t y_read_offset = 0x16C4E0;
+	const std::uint32_t money_read_offset = 0x12F500;
+
 };
 

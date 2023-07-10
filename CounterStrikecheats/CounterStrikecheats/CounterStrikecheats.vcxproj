@@ -130,8 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cheat.cpp" />
-    <ClCompile Include="CSFly.cpp" />
-    <ClCompile Include="FileName.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="ScanAddress.cpp" />
   </ItemGroup>
   <ItemGroup>
