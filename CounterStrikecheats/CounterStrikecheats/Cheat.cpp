@@ -7,14 +7,13 @@ Cheat::Cheat()
 	
 	pid = find_cs_pid();
 	std::cout << "pid: " << pid << std::endl;
-	csProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+	csProcess= std::make_shared<HANDLE>(OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid));
 	if (csProcess == NULL)
 	{
 		throw std::exception("OpenProcess failed: ", pid);
 	}
 
 	_init();
-	_start();
 	start();
 }
 
@@ -22,44 +21,43 @@ void Cheat::_init()
 {
 	money_read_address = find_module_base(cl_module_name) + money_read_offset;
 	Y_read_address = find_module_base(hw_module_name) + y_read_offset;
-}
-void Cheat::_start()
-{
-	Y_coordinate_read = new ScanAddress<float>;
-	money_read = new ScanAddress<int>;
 	
+	money_read = new ScanAddress<int>(csProcess);
+	Y_coordinate_read = new ScanAddress<float>(csProcess);
 }
+
 void Cheat::start()
 {
 	
-	money_read->scan_memory(csProcess, money_read_address);
-	Y_coordinate_read->scan_memory(csProcess, Y_read_address);
-	money_read->get_addresses_value();
+	money_read->search( money_read_address);
+	Y_coordinate_read->search( Y_read_address);
+
+
 }
 Cheat::~Cheat()
 {
 	delete Y_coordinate_read;
-	delete money_read	;
+	delete money_read;
 }
 template<typename GameType>
-GameType ScanAddress<GameType>::take_address(HANDLE csProcess, std::uint32_t read_address)
+GameType ScanAddress<GameType>::take_address( std::uint32_t read_address)
 {
 	GameType value;
 	SIZE_T size;
-	ReadProcessMemory(csProcess, reinterpret_cast<void*>(read_address), &value, sizeof(value), &size);
+	ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &value, sizeof(value), &size);
 
 	return value;
 }
 template<typename GameType>
-void ScanAddress<GameType>::search_address(HANDLE csProcess, std::uint8_t* current_ptr, GameType value, MEMORY_BASIC_INFORMATION& m_i)
+void ScanAddress<GameType>::search_address(std::uint8_t* current_ptr, GameType value, MEMORY_BASIC_INFORMATION& m_i)
 {
 
-	std::size_t bytes = VirtualQueryEx(csProcess, current_ptr, &m_i, sizeof(m_i));
+	std::size_t bytes = VirtualQueryEx(*p_csProcess.get(), current_ptr, &m_i, sizeof(m_i));
 	if (m_i.State == MEM_COMMIT && m_i.Protect == PAGE_READWRITE)
 	{
 		std::vector<std::uint8_t> read_buffer(m_i.RegionSize);
 		SIZE_T read_byte;
-		if (ReadProcessMemory(csProcess, current_ptr, read_buffer.data(), m_i.RegionSize, &read_byte) == TRUE)
+		if (ReadProcessMemory(*p_csProcess.get(), current_ptr, read_buffer.data(), m_i.RegionSize, &read_byte) == TRUE)
 		{
 			GameType* current_page_ptr = reinterpret_cast<GameType*>(read_buffer.data());
 			while ((std::uint8_t*)current_page_ptr < read_buffer.data() + read_buffer.size())
@@ -78,9 +76,22 @@ void ScanAddress<GameType>::search_address(HANDLE csProcess, std::uint8_t* curre
 
 }
 template<typename GameType>
-void ScanAddress<GameType>::scan_memory(HANDLE csProcess, std::uint32_t read_address)
+void ScanAddress<GameType>::search( std::uint32_t read_address)
 {
-	GameType value = take_address(csProcess, read_address);
+	GameType value = take_address( read_address);
+	scan_memory(value);
+}
+
+template<typename GameType>
+ScanAddress<GameType>::ScanAddress(std::shared_ptr<HANDLE> csProcess)
+{
+	this->p_csProcess = csProcess;
+}
+
+template<typename GameType>
+void ScanAddress<GameType>::scan_memory(GameType value)
+{
+	
 	SYSTEM_INFO s_i;
 	GetSystemInfo(&s_i);
 	std::uint8_t* start_ptr = static_cast<std::uint8_t*>(s_i.lpMinimumApplicationAddress);
@@ -92,16 +103,22 @@ void ScanAddress<GameType>::scan_memory(HANDLE csProcess, std::uint32_t read_add
 	while (current_ptr < end_ptr)
 	{
 		MEMORY_BASIC_INFORMATION m_i;
-		search_address(csProcess, current_ptr, value, m_i);
+		search_address(current_ptr, value, m_i);
 		current_ptr += m_i.RegionSize;
 
 	}
 	std::cout << "addresses size: " << addresses_value.size() <<"\t value: "<< value << std::endl;	//"\t sizeof type: " << sizeof value <<
 }
+
 template<typename GameType>
-const std::vector<std::uint32_t> ScanAddress<GameType>::get_addresses_value()
+std::uint32_t ScanAddress<GameType>::filter_address()
 {
-	return std::vector<std::uint32_t>();
+	for (const auto address_value :addresses_value)
+	{
+		/*if (WriteProcessMemory())
+		{ }*/
+	}
+	return std::uint32_t();
 }
 //template<typename GameType>
 //std::uint32_t Cheat<GameType>::get_pid()
@@ -126,7 +143,7 @@ const std::vector<std::uint32_t> ScanAddress<GameType>::get_addresses_value()
 
 HANDLE Cheat::get_csProcess()
 {
-	return csProcess;
+	return *csProcess.get();
 }
 
 
