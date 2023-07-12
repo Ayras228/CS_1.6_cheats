@@ -1,42 +1,58 @@
 ﻿  Cheat.cpp
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(186,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(186,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(47,1): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(44,1): message : while compiling class template member function 'GameType ScanAddress<GameType>::take_address(uint32_t)'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(274,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(274,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(138,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(134,1): message : while compiling class template member function 'void ScanAddress<float>::filter_address(GameType,const uint32_t)'
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(81,17): message : see reference to function template instantiation 'GameType ScanAddress<GameType>::take_address(uint32_t)' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(41,30): message : see reference to function template instantiation 'void ScanAddress<float>::filter_address(GameType,const uint32_t)' being compiled
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(80,1): message : while compiling class template member function 'void ScanAddress<float>::search(uint32_t)'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(33,27): message : see reference to function template instantiation 'void ScanAddress<float>::search(uint32_t)' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(26,44): message : see reference to class template instantiation 'ScanAddress<float>' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(68,1): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(53,1): message : while compiling class template member function 'void ScanAddress<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(23,39): message : see reference to class template instantiation 'ScanAddress<float>' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(144,25): warning C4018: '<': signed/unsigned mismatch
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(150,1): warning C4312: 'reinterpret_cast': conversion from '_Ty' to 'void *' of greater size
+          with
+          [
+              _Ty=uint32_t
+          ]
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(158,1): warning C4312: 'reinterpret_cast': conversion from 'const uint32_t' to 'void *' of greater size
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(53,1): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(50,1): message : while compiling class template member function 'GameType ScanAddress<GameType>::take_address(uint32_t)'
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(106,17): message : see reference to function template instantiation 'void ScanAddress<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(87,17): message : see reference to function template instantiation 'GameType ScanAddress<GameType>::take_address(uint32_t)' being compiled
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(93,1): message : while compiling class template member function 'void ScanAddress<float>::scan_memory(GameType)'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(86,1): message : while compiling class template member function 'void ScanAddress<float>::search(uint32_t)'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(38,22): message : see reference to function template instantiation 'void ScanAddress<float>::search(uint32_t)' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(74,1): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(59,1): message : while compiling class template member function 'void ScanAddress<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)'
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(82,13): message : see reference to function template instantiation 'void ScanAddress<float>::scan_memory(GameType)' being compiled
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(125,17): message : see reference to function template instantiation 'void ScanAddress<float>::search_address(uint8_t *,GameType,MEMORY_BASIC_INFORMATION &)' being compiled
           with
           [
               GameType=float
           ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(68,1): warning C4302: 'type cast': truncation from 'uint8_t *' to 'uint32_t'
-  main.cpp
-  Generating Code...
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(112,1): message : while compiling class template member function 'void ScanAddress<float>::scan_memory(GameType)'
+          with
+          [
+              GameType=float
+          ]
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(89,13): message : see reference to function template instantiation 'void ScanAddress<float>::scan_memory(GameType)' being compiled
+          with
+          [
+              GameType=float
+          ]
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(74,1): warning C4302: 'type cast': truncation from 'uint8_t *' to 'uint32_t'
   CounterStrikecheats.vcxproj -> G:\C++\CS_1.6_cheats\CounterStrikecheats\x64\Debug\CounterStrikecheats.exe

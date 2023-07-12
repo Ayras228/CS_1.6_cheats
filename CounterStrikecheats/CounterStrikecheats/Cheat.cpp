@@ -19,31 +19,37 @@ Cheat::Cheat()
 
 void Cheat::_init()
 {
-	money_read_address = find_module_base(cl_module_name) + money_read_offset;
-	Y_read_address = find_module_base(hw_module_name) + y_read_offset;
-	
-	money_read = new ScanAddress<int>(csProcess);
-	Y_coordinate_read = new ScanAddress<float>(csProcess);
+	money = new ScanAddress<int>(csProcess);
+	Y_coordinate = new ScanAddress<float>(csProcess);
+
+	std::uint32_t  money_read_offset = money->get_money_read_offset();
+	std::uint32_t Y_read_offset = Y_coordinate->get_Y_read_offset();
+
+	money->set_money_read_address(find_module_base(cl_module_name) + money_read_offset);
+	Y_coordinate->set_Y_read_address(find_module_base(hw_module_name) + Y_read_offset);
 }
 
 void Cheat::start()
 {
+	const std::uint32_t money_read_address = money->get_money_read_address();
+	const std::uint32_t Y_read_address = Y_coordinate->get_Y_read_address();
+
+	//money->search(money_read_address);
+	Y_coordinate->search(Y_read_address);
 	
-	money_read->search( money_read_address);
-	Y_coordinate_read->search( Y_read_address);
-
-
+	//money->filter_address(16000, money_read_address);
+	Y_coordinate->filter_address(Y_coordinate->value + 200, Y_read_address);
 }
 Cheat::~Cheat()
 {
-	delete Y_coordinate_read;
-	delete money_read;
+	delete Y_coordinate;
+	delete money;
 }
 template<typename GameType>
 GameType ScanAddress<GameType>::take_address( std::uint32_t read_address)
 {
 	GameType value;
-	SIZE_T size;
+	
 	ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &value, sizeof(value), &size);
 
 	return value;
@@ -79,6 +85,7 @@ template<typename GameType>
 void ScanAddress<GameType>::search( std::uint32_t read_address)
 {
 	GameType value = take_address( read_address);
+	this->value = value;
 	scan_memory(value);
 }
 
@@ -86,6 +93,18 @@ template<typename GameType>
 ScanAddress<GameType>::ScanAddress(std::shared_ptr<HANDLE> csProcess)
 {
 	this->p_csProcess = csProcess;
+}
+
+template<typename GameType>
+void ScanAddress<GameType>::set_Y_read_address(std::uint32_t Y_read_address)
+{
+	this->Y_read_address = Y_read_address;
+}
+
+template<typename GameType>
+void ScanAddress<GameType>::set_money_read_address(std::uint32_t money_read_address)
+{
+	this->money_read_address = money_read_address;
 }
 
 template<typename GameType>
@@ -111,15 +130,89 @@ void ScanAddress<GameType>::scan_memory(GameType value)
 }
 
 template<typename GameType>
-std::uint32_t ScanAddress<GameType>::filter_address()
+void ScanAddress<GameType>::filter_address(GameType write_value, const std::uint32_t read_address)
 {
-	for (const auto address_value :addresses_value)
+	//GameType write_value = 16000;
+	//std::uint32_t Y_write_address = 0;
+	std::uint32_t start = 0;
+	std::uint32_t end = addresses_value.size() - 1;
+	GameType buffer1;
+	GameType buffer2;
+	while (start < end-1)
 	{
-		/*if (WriteProcessMemory())
-		{ }*/
+		std::uint32_t middle = (start + end) / 2;
+
+		for (int i = start; i < middle; i++)
+		{
+			if (addresses_value.at(i) != read_address)
+			{
+				buffer1 = 0;
+				buffer2 = 0;
+				std::cout << "addresses_value: "<<addresses_value.at(i) << std::endl;
+				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
+				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
+
+				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer2, sizeof buffer2, &size);
+
+
+			}
+		}
+		auto start_time = std::chrono::system_clock::now();
+		//while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 5000);
+		buffer = 0;
+		ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer, sizeof buffer, &size);
+		std::cout << "buffer: " << buffer << std::endl;
+		if (buffer == write_value)
+		{
+			end = middle;
+
+		}
+		else
+		{
+			start = middle;
+		}
 	}
-	return std::uint32_t();
+	//10337CFC			// 271809788
 }
+ 
+//template<typename GameType>
+//void ScanAddress<GameType>::filter_address(GameType write_value, const std::uint32_t read_address)
+//{
+//
+//	std::uint32_t start = 0;
+//	std::uint32_t end = addresses_value.size();
+//	GameType buffer;
+//	GameType buffer1;
+//	float lam = 5;
+//		for (int i = start; i < end; i++)
+//		{
+//			if (addresses_value.at(i) != read_address)
+//			{
+//				//std::cout << "addresses_value: " << addresses_value.at(i) << std::endl;
+//				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
+//
+//				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
+//				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+//				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer, sizeof buffer, &size);
+//				if (buffer1 - buffer > lam)
+//				{
+//					auto start_time = std::chrono::system_clock::now();
+//					std::cout << "buffer1: " << buffer1 << "\t" << "buffer: " << buffer << std::endl;
+//					std::cout << "addresses_value: " << addresses_value.at(i) << std::endl;
+//					while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 210)
+//					{
+//						WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
+//					}
+//				}
+//				
+//			}
+//		}
+//		
+//
+//	
+//
+//}
+
 //template<typename GameType>
 //std::uint32_t Cheat<GameType>::get_pid()
 //{

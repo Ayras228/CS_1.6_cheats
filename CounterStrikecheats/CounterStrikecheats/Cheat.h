@@ -22,8 +22,8 @@ private:
 	std::uint32_t find_module_base(const wchar_t*  module_name);
 
 
-	ScanAddress<float>* Y_coordinate_read;
-	ScanAddress<int>* money_read;
+	ScanAddress<float>* Y_coordinate;
+	ScanAddress<int>* money;
 
 	void start();
 	void _init();
@@ -35,11 +35,11 @@ private:
 	const wchar_t* cl_module_name = L"client.dll"; // + 0x12F500 money
 
 
-	std::uint32_t Y_read_address;
+	/*std::uint32_t Y_read_address;
 	std::uint32_t money_read_address;
 	
 	const std::uint32_t y_read_offset = 0x16C4E0;
-	const std::uint32_t money_read_offset = 0x12F500;
+	const std::uint32_t money_read_offset = 0x12F500;*/
 
 };
 
