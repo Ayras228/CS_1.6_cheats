@@ -1,8 +1,12 @@
 ﻿  Cheat.cpp
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(274,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(274,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(138,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(134,1): message : while compiling class template member function 'void ScanAddress<float>::filter_address(GameType,const uint32_t)'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(324,57): warning C4311: 'reinterpret_cast': pointer truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(324,57): warning C4302: 'reinterpret_cast': truncation from 'BYTE *' to 'uint32_t'
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(149,1): warning C4312: 'reinterpret_cast': conversion from '_Ty' to 'void *' of greater size
+          with
+          [
+              _Ty=std::_Vbase
+          ]
+G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(133,1): message : while compiling class template member function 'void ScanAddress<float>::filter_address(GameType,const uint32_t)'
           with
           [
               GameType=float
@@ -13,13 +17,6 @@ G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(41,30): m
               GameType=float
           ]
 G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(23,39): message : see reference to class template instantiation 'ScanAddress<float>' being compiled
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(144,25): warning C4018: '<': signed/unsigned mismatch
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(150,1): warning C4312: 'reinterpret_cast': conversion from '_Ty' to 'void *' of greater size
-          with
-          [
-              _Ty=uint32_t
-          ]
-G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(158,1): warning C4312: 'reinterpret_cast': conversion from 'const uint32_t' to 'void *' of greater size
 G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(53,1): warning C4312: 'reinterpret_cast': conversion from 'uint32_t' to 'void *' of greater size
 G:\C++\CS_1.6_cheats\CounterStrikecheats\CounterStrikecheats\Cheat.cpp(50,1): message : while compiling class template member function 'GameType ScanAddress<GameType>::take_address(uint32_t)'
           with

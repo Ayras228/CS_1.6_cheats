@@ -70,7 +70,7 @@ void ScanAddress<GameType>::search_address(std::uint8_t* current_ptr, GameType v
 			{
 				if (*current_page_ptr == value)
 				{
-					addresses_value.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
+					addresses.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
 						read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
 
 				}
@@ -116,7 +116,7 @@ void ScanAddress<GameType>::scan_memory(GameType value)
 	std::uint8_t* start_ptr = static_cast<std::uint8_t*>(s_i.lpMinimumApplicationAddress);
 	std::uint8_t* end_ptr = static_cast<std::uint8_t*>(s_i.lpMaximumApplicationAddress);
 
-	addresses_value.clear();
+	addresses.clear();
 	std::uint8_t* current_ptr = start_ptr;
 
 	while (current_ptr < end_ptr)
@@ -126,82 +126,127 @@ void ScanAddress<GameType>::scan_memory(GameType value)
 		current_ptr += m_i.RegionSize;
 
 	}
-	std::cout << "addresses size: " << addresses_value.size() <<"\t value: "<< value << std::endl;	//"\t sizeof type: " << sizeof value <<
+	std::cout << "addresses size: " << addresses.size() <<"\t value: "<< value << std::endl;	//"\t sizeof type: " << sizeof value <<
 }
-
 template<typename GameType>
 void ScanAddress<GameType>::filter_address(GameType write_value, const std::uint32_t read_address)
 {
-	//GameType write_value = 16000;
-	//std::uint32_t Y_write_address = 0;
-	std::uint32_t start = 0;
-	std::uint32_t end = addresses_value.size() - 1;
-	GameType buffer1;
-	GameType buffer2;
-	while (start < end-1)
+	//std::vector<std::uint32_t> filter_addresses;
+	for (int i = 0; i < addresses.size()-1; i++)
 	{
-		std::uint32_t middle = (start + end) / 2;
+		//std::regex const reg = "271\d+";
+		std::regex const reg{ R"~(271\d+)~" };
+		std::smatch m;
 
-		for (int i = start; i < middle; i++)
+		std::string tmps = std::to_string(addresses.at(i));
+		//if (std::regex_match(tmps, result, re)) { negative_flag = true; }
+
+		if (std::regex_match(tmps, m, reg))
 		{
-			if (addresses_value.at(i) != read_address)
+			std::cout << addresses.at(i)<<std::endl;
+			while (true)
 			{
-				buffer1 = 0;
-				buffer2 = 0;
-				std::cout << "addresses_value: "<<addresses_value.at(i) << std::endl;
-				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
-				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
-
-				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer2, sizeof buffer2, &size);
-
-
+				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses.at(i)), &write_value, sizeof write_value, &size);
 			}
 		}
-		auto start_time = std::chrono::system_clock::now();
-		//while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 5000);
-		buffer = 0;
-		ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer, sizeof buffer, &size);
-		std::cout << "buffer: " << buffer << std::endl;
-		if (buffer == write_value)
-		{
-			end = middle;
-
-		}
-		else
-		{
-			start = middle;
-		}
+//		if (addresses.at(i) != read_address)
+//		{
+//			
+//			
+//			
+//
+//			/*std::cout << "addresses: " << addresses.at(i) << std::endl;
+//			auto start_time = std::chrono::system_clock::now();
+//			ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
+//			WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses.at(i)), &write_value, sizeof write_value, &size);
+//			while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 20);
+//			ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer2, sizeof buffer2, &size);
+//*/
+//
+//		}
 	}
-	//10337CFC			// 271809788
+
 }
+//template<typename GameType>
+//void ScanAddress<GameType>::filter_address(GameType write_value, const std::uint32_t read_address)
+//{
+//	//GameType write_value = 16000;
+//	//std::uint32_t Y_write_address = 0;
+//	std::uint32_t start = 0;
+//	std::uint32_t end = addresses.size() - 1;
+//	GameType buffer1;
+//	GameType buffer2;
+//	while (start < end-1)
+//	{
+//		std::uint32_t middle = (start + end) / 2;
+//		std::vector<std::uint32_t> filter_addresses;
+//		for (int i = start; i < middle; i++)
+//		{
+//			if (addresses.at(i) != read_address)
+//			{
+//
+//				std::cout << "addresses: "<<addresses.at(i) << std::endl;
+//				auto start_time = std::chrono::system_clock::now();
+//				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
+//				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses.at(i)), &write_value, sizeof write_value, &size);
+//				while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 20);
+//				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer2, sizeof buffer2, &size);
+//
+//				if (buffer1-buffer2>1)
+//				{
+//					filter_addresses.push_back(addresses[i]);
+//				}
+//
+//			}	
+//		}
+//
+//		//auto start_time = std::chrono::system_clock::now();
+//		//while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 5000);
+//		//buffer = 0;
+//		//ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer, sizeof buffer, &size);
+//		//std::cout << "buffer: " << buffer << std::endl;
+//		if (filter_addresses.empty())
+//		{
+//			start = middle;
+//
+//		}
+//		else
+//		{
+//			std::cout << "true" << std::endl;
+//			return;
+//			end = middle;
+//		}
+//	}
+//	//10337CFC			// 271809788
+//}
  
 //template<typename GameType>
 //void ScanAddress<GameType>::filter_address(GameType write_value, const std::uint32_t read_address)
 //{
 //
 //	std::uint32_t start = 0;
-//	std::uint32_t end = addresses_value.size();
+//	std::uint32_t end = addresses.size();
 //	GameType buffer;
 //	GameType buffer1;
 //	float lam = 5;
 //		for (int i = start; i < end; i++)
 //		{
-//			if (addresses_value.at(i) != read_address)
+//			if (addresses.at(i) != read_address)
 //			{
-//				//std::cout << "addresses_value: " << addresses_value.at(i) << std::endl;
+//				//std::cout << "addresses: " << addresses.at(i) << std::endl;
 //				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer1, sizeof buffer1, &size);
 //
-//				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
+//				WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses.at(i)), &write_value, sizeof write_value, &size);
 //				std::this_thread::sleep_for(std::chrono::milliseconds(100));
 //				ReadProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(read_address), &buffer, sizeof buffer, &size);
 //				if (buffer1 - buffer > lam)
 //				{
 //					auto start_time = std::chrono::system_clock::now();
 //					std::cout << "buffer1: " << buffer1 << "\t" << "buffer: " << buffer << std::endl;
-//					std::cout << "addresses_value: " << addresses_value.at(i) << std::endl;
+//					std::cout << "addresses: " << addresses.at(i) << std::endl;
 //					while (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start_time).count() < 210)
 //					{
-//						WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses_value.at(i)), &write_value, sizeof write_value, &size);
+//						WriteProcessMemory(*p_csProcess.get(), reinterpret_cast<void*>(addresses.at(i)), &write_value, sizeof write_value, &size);
 //					}
 //				}
 //				

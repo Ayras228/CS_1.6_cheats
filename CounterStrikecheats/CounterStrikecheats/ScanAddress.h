@@ -25,12 +25,13 @@ private:
 	
 	GameType take_address(std::uint32_t read_address);
 	void search_address(std::uint8_t* current_ptr, GameType value, MEMORY_BASIC_INFORMATION& m_i);
-	std::vector<std::uint32_t> addresses_value;
 	std::shared_ptr<HANDLE> p_csProcess;
+
+	std::vector<std::uint32_t> addresses;
+	std::shared_ptr<std::vector<std::uint32_t>> p_filter_addresses;
 
 	SIZE_T size;
 	
-
 	std::uint32_t Y_read_address;
 	std::uint32_t money_read_address;
 

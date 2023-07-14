@@ -24,7 +24,7 @@
 //			{
 //				if (*current_page_ptr == value)
 //				{
-//					addresses_value.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
+//					addresses.push_back((std::uint32_t)(((std::uint8_t*)current_page_ptr -
 //						read_buffer.data()) + (std::uint8_t*)m_i.BaseAddress));
 //
 //				}
@@ -44,7 +44,7 @@
 //	std::uint8_t* start_ptr = static_cast<std::uint8_t*>(s_i.lpMinimumApplicationAddress);
 //	std::uint8_t* end_ptr = static_cast<std::uint8_t*>(s_i.lpMaximumApplicationAddress);
 //
-//	addresses_value.clear();
+//	addresses.clear();
 //	std::uint8_t* current_ptr = start_ptr;
 //
 //	while (current_ptr < end_ptr)
@@ -54,11 +54,11 @@
 //		current_ptr += m_i.RegionSize;
 //
 //	}
-//	std::cout << "get_addresses_value_type().size(): " << addresses_value.size() << std::endl;
+//	std::cout << "get_addresses_value_type().size(): " << addresses.size() << std::endl;
 //}
 //
 //template<typename GameType>
 //const std::vector<std::uint32_t> ScanAddress<GameType>::get_addresses_value()
 //{
-//	return addresses_value;
+//	return addresses;
 //}
